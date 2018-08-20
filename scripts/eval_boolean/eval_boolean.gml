@@ -21,6 +21,24 @@ while(token_get_type(eval_get_current_token())==TokenType.BOOLEAN){
 		case ">=":
 			result = result >= eval_resolve();
 			break;
+		case "&&":
+			result = eval_resolve() && result;
+			break;
+		case "&":
+			result = eval_resolve() & result;
+			break;
+		case "||":
+			result = eval_resolve() || result;
+			break;
+		case "|":
+			result = eval_resolve() | result;
+			break;
+		case "^^":
+			result = eval_resolve() ^^ result;
+			break;
+		case "^":
+			result = eval_resolve() ^ result;
+			break;
 	}
 }
 if(boolean) result = real(result);

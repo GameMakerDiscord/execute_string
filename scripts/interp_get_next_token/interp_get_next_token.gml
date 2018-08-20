@@ -199,6 +199,39 @@ else{
 				token = token_create(TokenType.BOOLEAN,c);
 			}
 			break;
+		case "&":
+			interp_advance(interp);
+			if(interp_get_current_char(interp) == "&"){
+				token = token_create(TokenType.BOOLEAN,"&&");
+				interp_advance(interp);
+				
+			}
+			else{
+				token = token_create(TokenType.BOOLEAN,c);
+			}
+			break;
+		case "|":
+			interp_advance(interp);
+			if(interp_get_current_char(interp) == "|"){
+				token = token_create(TokenType.BOOLEAN,"||");
+				interp_advance(interp);
+				
+			}
+			else{
+				token = token_create(TokenType.BOOLEAN,c);
+			}
+			break;
+		case "^":
+			interp_advance(interp);
+			if(interp_get_current_char(interp) == "^"){
+				token = token_create(TokenType.BOOLEAN,"^^");
+				interp_advance(interp);
+				
+			}
+			else{
+				token = token_create(TokenType.BOOLEAN,c);
+			}
+			break;
 		default:
 			return;
 	}
