@@ -24,7 +24,7 @@ var funcIndex = asset_get_index(function);
 if(funcIndex == -1) with(creator) returnval = function_execute_array(function, ds_list_to_array(args));
 else{
 	if(eval_is_hidden_function(funcIndex)) returnval = script_execute_args(funcIndex, args);
-	else with(creator) returnval = function_execute_array(function, ds_list_to_array(args));
+	else with(creator) returnval = script_execute_args(funcIndex, args);
 }
 
 ds_list_destroy(args);
