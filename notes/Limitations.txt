@@ -1,1 +1,2 @@
-Go wild!
+Scripts that are run with execute_string must be limited to 16 arguments or less,
+due to the way it calls script_execute to run functions.
