@@ -9,9 +9,9 @@ Supported Keywords note, and special extra functions are listed in Special Funct
 To execute a string, you simply write the code and run it in the function like so:
 execute_string("show_message(\"This code is being executed!\")");
 
-
-Variables that are accessed inside execute_string are local, and it can't read variables from outside.
-Strings that have variables already in them can be utilized using execute_string_args
-execute_string_args("show_message(x);", "x", x);
-
+~~~~~~~~~~~
+TO ADD TO YOUR OWN PROJECT
+Be sure to include the scripts in this project, the extension, and the object sys_eval.
+The rest is included for demonstration purposes.
+~~~~~~~~~~~
 AndrewBGM is responsible for the extension that makes all built-in functions callable!
