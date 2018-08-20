@@ -1,0 +1,31 @@
+execute_string does not have access to variables within the instance that called it.
+All variables used in a string executed by execute_string can be considered local.  However, variables can be
+passed into an execution using execute_string_args.
+For example, if your code string looks like this:
+	
+	show_debug_message(x);
+
+Then execute_string will not read x as your x position, but as a local variable named x.  You can pass your x
+position into the string using execute_string_args, like so:
+
+	execute_string_args("show_debug_message(x);","x",x);
+
+----------
+
+All user created scripts that are to be used with execute_string must accept their arguments in the form
+of a single ds_list, instead of argument0, argument1, etc...  This is due to an unfortunate limitation with script_execute.
+
+You can find an example of the proper form of accepting arguments in play_animation and
+wait_for_animation.
+
+----------
+
+You can retrieve variable values after execution, but only if your evaluator still exists.
+The evaluator will automatically destroy itself after it finishes executing, but you can prevent this by
+calling wait_for_destruction() in code.  Then you may retrieve values and destroy it normally.
+	
+So, we can retrieve variables like this:
+
+	var eval = execute_string("x = 20; wait_for_destruction();");
+	x = eval_get_variable(eval, "x");
+	eval_destroy(eval);

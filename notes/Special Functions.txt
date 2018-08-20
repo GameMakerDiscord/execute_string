@@ -1,0 +1,31 @@
+wait(time) - halts execution for the specified number of steps before continuing
+Example:
+	show_message("Hi!");
+	wait(60);
+	show_message("Goodbye!");
+
+
+wait_for_destruction() - called at the end of the string if you wish for the evaluator to
+not destroy itself once it is finished.
+Example:
+	x = 50;
+	wait_for_destruction();
+
+
+play_animation(instance, animation, ?arguments) - plays an animation for specified instance
+Example:
+	play_animation(obj_box, anim_wiggle);
+	
+
+wait_for_animation(instance, animation, ?argguments) - plays an animation and halts execution
+until the animation has been completed
+Example:
+	wait_for_animation(obj_file_exe,animation_bob, 10, 10, 60);
+	show_message("Animation is complete!");
+
+
+goto(label) - moves execution to the specified label, written as label NAME
+Example:
+	label START
+	show_message("This loops back to the start forever!");
+	goto("START");

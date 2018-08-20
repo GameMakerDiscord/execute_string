@@ -1,0 +1,1 @@
+return in(argument0, wait, wait_for_destruction, goto, play_animation, wait_for_animation);

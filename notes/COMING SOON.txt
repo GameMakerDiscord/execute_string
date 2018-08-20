@@ -1,0 +1,5 @@
+To be added soon!
+do...until loops
+repeat
+return
+Bitwise functions
