@@ -1,8 +1,15 @@
-///@function eval_set_variable(eval, varname, value)
+///@function eval_set_variable(eval, varname, value, ?local)
 ///@arg eval
 ///@arg varname
 ///@arg value
+///@arg local
 ///@returns value
-var eval = argument0;
-eval.variables[? argument1] = argument2;
-return argument2;
+var eval = argument[0];
+var _local = false;
+if(argument_count > 3) _local = argument[3];
+if(_local){
+	eval.variables[? argument[1]] = argument[2];
+	return argument[2];
+}
+variable_instance_set(eval.creator, argument[1], argument[2]);
+return argument[2];

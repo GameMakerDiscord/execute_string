@@ -1,9 +1,7 @@
 ///@function eval_line()
 var token;
+var next_var_local = false;
 switch(token_get_type(eval_get_current_token())){
-	case TokenType.VAR:
-		eval_eat_token(TokenType.VAR);
-		return;
 	case TokenType.ENDL:
 		break;
 	case TokenType.LBRACE:
@@ -55,11 +53,17 @@ switch(token_get_type(eval_get_current_token())){
 		eval_jmp([arg[0],false]);
 		return;
 		
+	case TokenType.VAR:
+		eval_eat_token(TokenType.VAR);
+		next_var_local = true;
 	case TokenType.VARIABLE:
 		var varname = eval_eat_token(TokenType.VARIABLE);
 		switch(eval_eat_token(TokenType.SPECIAL)){
 			case "=":
-				eval_set_variable(id, varname, eval_resolve());
+				if(next_var_local){
+					eval_set_variable(id, varname, eval_resolve(), true);
+				}else
+					eval_set_variable(id, varname, eval_resolve());
 				break;
 			case "++":
 				eval_set_variable(id, varname, eval_get_variable(id,varname) + 1);

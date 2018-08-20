@@ -3,4 +3,5 @@
 ///@arg varname
 ///@returns value
 var eval = argument0;
-return eval.variables[? argument1];
+if(ds_map_exists(eval.variables, argument1)) return eval.variables[? argument1];
+return variable_instance_get(eval.creator, argument1);
