@@ -3804,48 +3804,6 @@ return iap_product_details(_a[0],_a[1]);
 #define __function_execute_1512678626657_iap_purchase_details
 var _a = argument[0];
 return iap_purchase_details(_a[0],_a[1]);
-#define __function_execute_1512678626657_facebook_init
-var _a = argument[0];
-return facebook_init();
-#define __function_execute_1512678626657_facebook_login
-var _a = argument[0];
-return facebook_login(_a[0],_a[1]);
-#define __function_execute_1512678626657_facebook_status
-var _a = argument[0];
-return facebook_status();
-#define __function_execute_1512678626657_facebook_graph_request
-var _a = argument[0];
-return facebook_graph_request(_a[0],_a[1],_a[2],_a[3]);
-#define __function_execute_1512678626657_facebook_dialog
-var _a = argument[0];
-return facebook_dialog(_a[0],_a[1],_a[2]);
-#define __function_execute_1512678626657_facebook_logout
-var _a = argument[0];
-return facebook_logout();
-#define __function_execute_1512678626657_facebook_launch_offerwall
-var _a = argument[0];
-return facebook_launch_offerwall(_a[0]);
-#define __function_execute_1512678626657_facebook_post_message
-var _a = argument[0];
-return facebook_post_message(_a[0],_a[1],_a[2],_a[3],_a[4],_a[5],_a[6]);
-#define __function_execute_1512678626657_facebook_send_invite
-var _a = argument[0];
-return facebook_send_invite(_a[0],_a[1],_a[2],_a[3],_a[4]);
-#define __function_execute_1512678626657_facebook_user_id
-var _a = argument[0];
-return facebook_user_id();
-#define __function_execute_1512678626657_facebook_accesstoken
-var _a = argument[0];
-return facebook_accesstoken();
-#define __function_execute_1512678626657_facebook_check_permission
-var _a = argument[0];
-return facebook_check_permission(_a[0]);
-#define __function_execute_1512678626657_facebook_request_read_permissions
-var _a = argument[0];
-return facebook_request_read_permissions(_a[0]);
-#define __function_execute_1512678626657_facebook_request_publish_permissions
-var _a = argument[0];
-return facebook_request_publish_permissions(_a[0]);
 #define __function_execute_1512678626657_gamepad_is_supported
 var _a = argument[0];
 return gamepad_is_supported();
